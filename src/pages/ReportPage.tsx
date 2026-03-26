@@ -21,7 +21,7 @@ export default function ReportPage() {
 
   return (
     <PageTransition className="max-w-3xl mx-auto space-y-6">
-      <h1 className="text-xl font-bold text-white">月次レポート</h1>
+      <h1 className="text-xl font-bold text-foreground">月次レポート</h1>
       <div className="grid grid-cols-4 gap-4">
         {[
           { icon: CalendarCheck, label: '出勤日数', value: `${workedDays}日`, color: '#f97316' },
@@ -32,7 +32,7 @@ export default function ReportPage() {
           <div key={label} className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5">
             <Icon className="w-5 h-5 mb-2" style={{ color }} />
             <p className="text-xs text-zinc-500">{label}</p>
-            <p className="text-xl font-bold text-white">{value}</p>
+            <p className="text-xl font-bold text-foreground">{value}</p>
           </div>
         ))}
       </div>
@@ -56,7 +56,7 @@ export default function ReportPage() {
               }
               return (
                 <tr key={r.date} className="border-b border-zinc-800/50 last:border-0">
-                  <td className="px-5 py-2.5 text-sm text-white">{r.date}</td>
+                  <td className="px-5 py-2.5 text-sm text-foreground">{r.date}</td>
                   <td className="px-5 py-2.5"><span className={`text-xs px-2 py-0.5 rounded-full ${r.type === 'remote' ? 'bg-blue-500/10 text-blue-400' : r.type === 'paid-leave' ? 'bg-purple-500/10 text-purple-400' : 'bg-emerald-500/10 text-emerald-400'}`}>{r.type === 'remote' ? 'リモート' : r.type === 'paid-leave' ? '有給' : '通常'}</span></td>
                   <td className="px-5 py-2.5 text-sm text-zinc-400">{r.clockIn || '-'}</td>
                   <td className="px-5 py-2.5 text-sm text-zinc-400">{r.clockOut || '-'}</td>

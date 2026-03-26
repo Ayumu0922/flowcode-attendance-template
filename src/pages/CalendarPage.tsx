@@ -28,11 +28,11 @@ export default function CalendarPage() {
   return (
     <PageTransition className="max-w-3xl mx-auto">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-xl font-bold text-white">勤怠カレンダー</h1>
+        <h1 className="text-xl font-bold text-foreground">勤怠カレンダー</h1>
         <div className="flex items-center gap-4">
-          <button onClick={() => setCurrentDate(new Date(year, month - 1))} className="text-zinc-400 hover:text-white"><ChevronLeft className="w-5 h-5" /></button>
-          <span className="text-sm font-semibold text-white">{year}年{month + 1}月</span>
-          <button onClick={() => setCurrentDate(new Date(year, month + 1))} className="text-zinc-400 hover:text-white"><ChevronRight className="w-5 h-5" /></button>
+          <button onClick={() => setCurrentDate(new Date(year, month - 1))} className="text-zinc-400 hover:text-foreground"><ChevronLeft className="w-5 h-5" /></button>
+          <span className="text-sm font-semibold text-foreground">{year}年{month + 1}月</span>
+          <button onClick={() => setCurrentDate(new Date(year, month + 1))} className="text-zinc-400 hover:text-foreground"><ChevronRight className="w-5 h-5" /></button>
         </div>
       </div>
       <div className="grid grid-cols-7 gap-1">

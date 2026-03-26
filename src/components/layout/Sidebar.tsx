@@ -14,7 +14,7 @@ export default function Sidebar() {
     <aside data-fc-id="Sidebar-root" className="w-60 h-full border-r border-zinc-800 bg-zinc-900/50 p-4 flex flex-col">
       <div data-fc-id="Sidebar-brand" className="flex items-center gap-2 px-3 py-4 mb-4">
         <Clock className="w-6 h-6 text-accent-500" />
-        <span className="text-base font-bold text-white">勤怠管理</span>
+        <span className="text-base font-bold text-foreground">勤怠管理</span>
       </div>
       <nav data-fc-id="Sidebar-nav" className="flex flex-col gap-1 flex-1">
         {links.map(({ to, icon: Icon, label }) => (

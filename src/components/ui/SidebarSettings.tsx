@@ -72,7 +72,7 @@ export default function SidebarSettings({ storageKey, exportFileName }: SidebarS
                   title={c.label}
                   className={`w-5 h-5 rounded-full transition-all ${
                     accentColor === c.name
-                      ? 'ring-2 ring-offset-1 ring-offset-zinc-900 ring-white scale-110'
+                      ? 'ring-2 ring-offset-1 ring-offset-zinc-900 ring-foreground scale-110'
                       : 'hover:scale-110 opacity-70 hover:opacity-100'
                   }`}
                   style={{ backgroundColor: c.swatch }}

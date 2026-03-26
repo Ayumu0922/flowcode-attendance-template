@@ -28,21 +28,21 @@ export default function TimeclockPage() {
       <PageTransition className="text-center space-y-8">
         <div>
           <p className="text-zinc-500 text-sm mb-2">{time.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' })}</p>
-          <p className="text-6xl font-black text-white tabular-nums">{time.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</p>
+          <p className="text-6xl font-black text-foreground tabular-nums">{time.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</p>
         </div>
         <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 space-y-6">
           <div className="grid grid-cols-2 gap-4 text-center">
-            <div><p className="text-xs text-zinc-500 mb-1">出勤</p><p className="text-2xl font-bold text-white">{record?.clockIn || '--:--'}</p></div>
-            <div><p className="text-xs text-zinc-500 mb-1">退勤</p><p className="text-2xl font-bold text-white">{record?.clockOut || '--:--'}</p></div>
+            <div><p className="text-xs text-zinc-500 mb-1">出勤</p><p className="text-2xl font-bold text-foreground">{record?.clockIn || '--:--'}</p></div>
+            <div><p className="text-xs text-zinc-500 mb-1">退勤</p><p className="text-2xl font-bold text-foreground">{record?.clockOut || '--:--'}</p></div>
           </div>
-          {getWorkHours() && <p className="text-sm text-zinc-400 text-center">勤務時間: <span className="text-white font-semibold">{getWorkHours()}</span></p>}
+          {getWorkHours() && <p className="text-sm text-zinc-400 text-center">勤務時間: <span className="text-foreground font-semibold">{getWorkHours()}</span></p>}
           <div className="flex gap-4">
             <button onClick={() => { clockIn(); showToast('出勤を記録しました', 'success'); }} disabled={!!record?.clockIn}
-              className="flex-1 flex items-center justify-center gap-2 bg-accent-600 hover:bg-accent-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white py-4 rounded-xl font-semibold transition-colors">
+              className="flex-1 flex items-center justify-center gap-2 bg-accent-600 hover:bg-accent-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-on-accent py-4 rounded-xl font-semibold transition-colors">
               <LogIn className="w-5 h-5" /> 出勤
             </button>
             <button onClick={() => { clockOut(); showToast('退勤を記録しました', 'success'); }} disabled={!record?.clockIn || !!record?.clockOut}
-              className="flex-1 flex items-center justify-center gap-2 bg-zinc-700 hover:bg-zinc-600 disabled:bg-zinc-800 disabled:text-zinc-600 text-white py-4 rounded-xl font-semibold transition-colors">
+              className="flex-1 flex items-center justify-center gap-2 bg-zinc-700 hover:bg-zinc-600 disabled:bg-zinc-800 disabled:text-zinc-600 text-foreground py-4 rounded-xl font-semibold transition-colors">
               <LogOut className="w-5 h-5" /> 退勤
             </button>
           </div>

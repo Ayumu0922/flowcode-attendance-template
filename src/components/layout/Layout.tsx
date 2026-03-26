@@ -16,7 +16,7 @@ export default function Layout() {
       <button
         data-fc-id="Layout-menu-button"
         onClick={() => setSidebarOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-foreground transition-colors"
       >
         <Menu className="w-5 h-5" />
       </button>

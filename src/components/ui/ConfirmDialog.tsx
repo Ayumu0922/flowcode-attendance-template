@@ -74,7 +74,7 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center ${iconBg[state.options.variant || 'danger']}`}>
                   <AlertTriangle className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-semibold text-white">{state.options.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground">{state.options.title}</h3>
               </div>
               <p data-fc-id="ConfirmDialog-message" className="text-sm text-zinc-400 mb-6 leading-relaxed">
                 {state.options.message}
@@ -83,14 +83,14 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
                 <button
                   data-fc-id="ConfirmDialog-cancel"
                   onClick={() => handle(false)}
-                  className="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-foreground bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-colors"
                 >
                   {state.options.cancelLabel || 'キャンセル'}
                 </button>
                 <button
                   data-fc-id="ConfirmDialog-confirm"
                   onClick={() => handle(true)}
-                  className={`px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors ${variantStyles[state.options.variant || 'danger']}`}
+                  className={`px-4 py-2 text-sm font-medium text-on-accent rounded-lg transition-colors ${variantStyles[state.options.variant || 'danger']}`}
                 >
                   {state.options.confirmLabel || '確認'}
                 </button>

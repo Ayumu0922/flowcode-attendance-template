@@ -62,7 +62,7 @@ export default function SettingsDropdown({ storageKey, exportFileName }: Setting
       <button
         data-fc-id="SettingsDropdown-trigger"
         onClick={() => setOpen(!open)}
-        className="p-2 text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/50"
+        className="p-2 text-zinc-400 hover:text-foreground transition-colors rounded-lg hover:bg-zinc-800/50"
         title="表示設定"
       >
         <Settings2 className="w-4 h-4" />
@@ -82,7 +82,7 @@ export default function SettingsDropdown({ storageKey, exportFileName }: Setting
                   title={c.label}
                   className={`w-5 h-5 rounded-full transition-all ${
                     accentColor === c.name
-                      ? 'ring-2 ring-offset-1 ring-offset-zinc-900 ring-white scale-110'
+                      ? 'ring-2 ring-offset-1 ring-offset-zinc-900 ring-foreground scale-110'
                       : 'hover:scale-110 opacity-70 hover:opacity-100'
                   }`}
                   style={{ backgroundColor: c.swatch }}
