@@ -43,8 +43,8 @@ export default function CalendarPage() {
           const record = getRecord(day);
           const isToday = new Date().toISOString().split('T')[0] === `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
           return (
-            <div key={i} className={`p-2 rounded-lg border text-center min-h-[70px] ${isToday ? 'border-orange-500/50 bg-orange-500/5' : 'border-zinc-800/50'}`}>
-              <p className={`text-sm ${isToday ? 'text-orange-400 font-bold' : 'text-zinc-400'}`}>{day}</p>
+            <div key={i} className={`p-2 rounded-lg border text-center min-h-[70px] ${isToday ? 'border-accent-500/50 bg-accent-500/5' : 'border-zinc-800/50'}`}>
+              <p className={`text-sm ${isToday ? 'text-accent-400 font-bold' : 'text-zinc-400'}`}>{day}</p>
               {record && (
                 <div className="mt-1 space-y-0.5">
                   <span className={`inline-block w-2 h-2 rounded-full ${typeColors[record.type] || 'bg-zinc-600'}`} />
