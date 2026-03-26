@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAttendanceStore } from '../store/attendanceStore';
+import PageTransition from '../components/ui/PageTransition';
 
 export default function CalendarPage() {
   const { records } = useAttendanceStore();
@@ -25,7 +26,7 @@ export default function CalendarPage() {
   const typeColors: Record<string, string> = { normal: 'bg-emerald-500', remote: 'bg-blue-500', 'paid-leave': 'bg-purple-500', holiday: 'bg-zinc-600' };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <PageTransition className="max-w-3xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-xl font-bold text-white">勤怠カレンダー</h1>
         <div className="flex items-center gap-4">
@@ -60,6 +61,6 @@ export default function CalendarPage() {
           <span key={label} className="flex items-center gap-1.5 text-xs text-zinc-500"><span className={`w-2 h-2 rounded-full ${color}`} />{label}</span>
         ))}
       </div>
-    </div>
+    </PageTransition>
   );
 }

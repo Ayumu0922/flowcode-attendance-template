@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
 import { Clock, CalendarCheck, Coffee, TrendingUp } from 'lucide-react';
+import PageTransition from '../components/ui/PageTransition';
 import { useAttendanceStore } from '../store/attendanceStore';
 
 export default function ReportPage() {
@@ -20,7 +20,7 @@ export default function ReportPage() {
   const avgHours = workedDays > 0 ? (totalMinutes / workedDays / 60).toFixed(1) : '0';
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl mx-auto space-y-6">
+    <PageTransition className="max-w-3xl mx-auto space-y-6">
       <h1 className="text-xl font-bold text-white">月次レポート</h1>
       <div className="grid grid-cols-4 gap-4">
         {[
@@ -67,6 +67,6 @@ export default function ReportPage() {
           </tbody>
         </table>
       </div>
-    </motion.div>
+    </PageTransition>
   );
 }

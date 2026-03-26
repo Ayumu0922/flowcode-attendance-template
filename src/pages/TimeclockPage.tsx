@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { LogIn, LogOut } from 'lucide-react';
+import PageTransition from '../components/ui/PageTransition';
 import { useAttendanceStore } from '../store/attendanceStore';
 import { useToast } from '../components/ui/Toast';
 
@@ -25,7 +25,7 @@ export default function TimeclockPage() {
 
   return (
     <div className="max-w-lg mx-auto">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center space-y-8">
+      <PageTransition className="text-center space-y-8">
         <div>
           <p className="text-zinc-500 text-sm mb-2">{time.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' })}</p>
           <p className="text-6xl font-black text-white tabular-nums">{time.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</p>
@@ -52,7 +52,7 @@ export default function TimeclockPage() {
             <div key={type} className={`bg-zinc-900/50 border rounded-xl p-3 text-center text-sm ${record?.type === type ? 'border-accent-500/50 text-accent-400' : 'border-zinc-800 text-zinc-500'}`}>{label}</div>
           ))}
         </div>
-      </motion.div>
+      </PageTransition>
     </div>
   );
 }
