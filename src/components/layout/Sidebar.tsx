@@ -1,8 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { Clock, CalendarDays, FileBarChart, Settings } from 'lucide-react';
-import ThemeToggle from '../ui/ThemeToggle';
-import ThemeColorPicker from '../ui/ThemeColorPicker';
-import DataManager from '../ui/DataManager';
+import SidebarSettings from '../ui/SidebarSettings';
 
 const links = [
   { to: '/', icon: Clock, label: '打刻' },
@@ -25,11 +23,7 @@ export default function Sidebar() {
           }><Icon className="w-4 h-4" />{label}</NavLink>
         ))}
       </nav>
-      <div data-fc-id="Sidebar-footer" className="border-t border-zinc-800 pt-3 flex flex-col gap-1">
-        <DataManager storageKey="attendance-storage" exportFileName="attendance-data" />
-        <ThemeColorPicker />
-        <ThemeToggle />
-      </div>
+      <SidebarSettings storageKey="attendance-storage" exportFileName="attendance-data" />
     </aside>
   );
 }
